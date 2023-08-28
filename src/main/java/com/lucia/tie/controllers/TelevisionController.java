@@ -10,9 +10,8 @@ import java.util.List;
 public class TelevisionController {
     @GetMapping("/getTelevision")
     // defining a single endpoint using @GetMapping annotation with the path getTelevision - when a get request is made to this endpoint the getTelevision will be executed.
-    public ResponseEntity<String> getTelevision() {
-        String television = "television"; // creating a string here with the value of television // why ?
-        return ResponseEntity.ok(television); // the ResponseEntity.ok(television) call creates a response with an HTTP status of 200 OK and includes the "television" String as the response body" - couldn't return only television without making a variable here - my guess is that you have to save the new information somewhere?
+    public ResponseEntity<String> getTelevision(String television) {
+        return ResponseEntity.ok(television); // the ResponseEntity.ok(television) call creates a response with an HTTP status of 200 OK and includes television as the response body
     }
 
     @GetMapping("/getAllTelevisions")
@@ -26,6 +25,14 @@ public class TelevisionController {
         return ResponseEntity.ok(allTelevisions);
 
     }
+
+    @PostMapping("/postTelevision")
+    public ResponseEntity<String> postTelevision(String television) {
+
+        return ResponseEntity.created(null).body(television);
+    }
+@PostMapping()
+
 }
 
 

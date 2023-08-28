@@ -44,7 +44,7 @@ public class TelevisionController {
 
         return ResponseEntity.noContent().build();
     }
-
 }
 
+// notes: maybe better to change updated and deteledTelevision into general television ?? //
 

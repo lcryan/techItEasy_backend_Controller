@@ -17,7 +17,8 @@ public class TelevisionController {
 
     @GetMapping("/getAllTelevisions")
     public ResponseEntity<List<String>> getAllTelevisions() {
-        List<String> allTelevisions = new ArrayList<>();
+        List<String> allTelevisions = new ArrayList<>(); // could we also add an existing list here from a database ?
+
         allTelevisions.add("Samsung 890723734"); //question here is where we get the ArrayList from ??? Do we have to make this list in postman ??? //
         allTelevisions.add("Sony - BB890"); // example for television //
         allTelevisions.add("LG - 8890978");

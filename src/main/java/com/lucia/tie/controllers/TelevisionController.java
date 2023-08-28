@@ -22,12 +22,13 @@ public class TelevisionController {
 
     @PostMapping("/postTelevision")
     public ResponseEntity<String> postTelevision(String television) {
-
         return ResponseEntity.created(null).body(television);
     }
 
     @PostMapping("/postAllTelevisions")
-    public ResponseEntity<List<String>> postAllTelevisions ()
+    public ResponseEntity<List<String>> postAllTelevisions(List<String> allTelevisions) {
+        return ResponseEntity.created(null).body(allTelevisions);
+    }
 }
 
 

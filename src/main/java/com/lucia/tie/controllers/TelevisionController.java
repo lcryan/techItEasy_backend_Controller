@@ -8,6 +8,9 @@ import java.util.List;
 
 @RestController
 public class TelevisionController {
+    private String currentTelevisionDetails; // this still has to be initialized // have to be made in an extra class I think //
+    private long id; //has to be initialized as well //
+
     @GetMapping("/getTelevision")
     // defining a single endpoint using @GetMapping annotation with the path getTelevision - when a get request is made to this endpoint the getTelevision will be executed.
     public ResponseEntity<String> getTelevision(String television) {
@@ -29,6 +32,19 @@ public class TelevisionController {
     public ResponseEntity<List<String>> postAllTelevisions(List<String> allTelevisions) {
         return ResponseEntity.created(null).body(allTelevisions);
     }
+
+    @PutMapping("/update/id")
+    public ResponseEntity<String> putTelevision(@PathVariable long id, @RequestBody String updatedTelevisionDetails) {
+        currentTelevisionDetails = updatedTelevisionDetails; // updated details replace current details //
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteTelevision(@PathVariable long id, @RequestBody String deletedTelevision) {
+
+        return ResponseEntity.noContent().build();
+    }
+
 }
 
 
